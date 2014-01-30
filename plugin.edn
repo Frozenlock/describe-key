@@ -2,5 +2,5 @@
  :version "0.0.1"
  :author "Frozenlock"
  :source "https://github.com/Frozenlock/describe-key"
- :desc "Describe the command associated with a key sequence instead of actually doing it. (Like <ctrl-h k> in Emacs)"
+ :desc "Describe the command associated with a key sequence instead of actually doing it. (Like <C-h k> in Emacs)"
  :behaviors "describe_key.behaviors"}
