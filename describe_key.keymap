@@ -1,0 +1,1 @@
+{:+ {:app {"ctrl-h k" [:lt.plugins.describe-key.describe-key]}}}
