@@ -8,6 +8,11 @@ Give LT the same `ctrl-h k` capabilities as Emacs.
 
 Can be cancelled by doing `ctrl-g`.
 
+## Changelog
+
+* 0.0.2 Fixes bug when the key called a command with an argument.
+* 0.0.1 Initial release
+
 ## License
 
 Copyright © 2014 Frozenlock

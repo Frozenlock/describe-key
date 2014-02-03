@@ -21,16 +21,19 @@
   (reset! lt.objs.keyboard/key-map @old-key-map))
 
 
+;; commands with arguments --->    [(:some-command "arg1" "arg2" ...)]
+;; commands without arguments ---> [:some-other-command]
 
-(defn print-key-command [keyseq command]
-  (let [f (if (keyword? command) command (first command))
-        args (when-not (keyword? command) (rest command))
-        stored-cmd (cmd/by-id f)]
+(defn print-key-command [keyseq command-and-args]
+  (let [c&a (first command-and-args)
+        [command args] (if (keyword? c&a) [c&a nil]
+                         [(first c&a) (rest c&a)])
+        stored-cmd (cmd/by-id command)]
     (popup/popup! {:header "Describe key"
                    :body [:div [:h1 keyseq]
-                               [:h2 (str "Command: " (:command stored-cmd))]
-                               (when (seq args) [:h2 (s/join " " (cons "Arguments:" args))])
-                               [:i (:desc stored-cmd)]]
+                          [:h2 (str "Command: " (:command stored-cmd))]
+                          (when (seq args) [:h2 (s/join " " (cons "Arguments:" (map pr-str args)))])
+                          [:i (:desc stored-cmd)]]
                    :buttons [{:label "Ok" :action :cancel}]})))
 
 
@@ -65,3 +68,8 @@
               :exec (fn []
                       (describe-key))})
 
+;; dev
+
+;; (print-key-command "Ctrl-alt-k" ['(:emacs.keymap-cmd "arg1" "arg2")])
+;; (print-key-command "Ctrl-alt-k" [:emacs.keymap-cmd])
+;; (describe-key)
