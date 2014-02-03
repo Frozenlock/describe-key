@@ -1,2 +1,2 @@
-{:+ {:app [(:lt.objs.plugins/load-js "describe_key_compiled.js" true)
+{:+ {:app [(:lt.objs.plugins/load-js "describe key_compiled.js" true)
            (:lt.objs.plugins/load-keymap "describe_key.keymap")]}}
