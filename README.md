@@ -10,8 +10,9 @@ Can be cancelled by doing `ctrl-g`.
 
 ## Changelog
 
+* 0.0.3 Remove precompiled files.
 * 0.0.2 Fixes bug when the key called a command with an argument.
-* 0.0.1 Initial release
+* 0.0.1 Initial release.
 
 ## License
 
